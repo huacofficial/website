@@ -50,12 +50,11 @@
 						<section>
 							<h3>HUCSat Tracker</h3>
 							<p>Follow the real-time position of HUCSat using the satellite tracker developed by the team.</p>
-							<!-- Tracker integration goes here -->
+							<!-- JACK PUT HERE DO THIS HERE EMBED CODETracker integration goes here -->
 							<div class="tracker-placeholder" style="border: 2px dashed #ccc; padding: 3em; text-align: center; margin-bottom: 2em;">
 								<p>Satellite tracker coming soon</p>
 							</div>
 						</section>
-
 						<hr />
 
 						<!-- HUCSat Mission -->
@@ -69,12 +68,52 @@ The satellite is expected to remain operational through the end of 2027, during 
 									</p>
 								</div>
 								<div class="col-4 col-12-medium">
-									<span class="image fit"><img src="images/Hucsat.webp" alt="HUCSat" /></span>
+									<div id="satellite-progress-slideshow"></div>
 								</div>
 							</div>
 						</section>
+						<script>
+							initDriveSlideshow('satellite-progress-slideshow', '1Ug5yfTiUDfC6O3TTK2YecKvYjW2RedHI', 'AIzaSyANcILY099U0b9G2Y1e4fn40oAdYxNlfqE', {
+								maxWidth: '100%',
+								height: '300px',
+								intervalMs: 4000
+							});
+						</script>
 
 						<hr />
+						<!-- Launch Trip -->
+						<section>
+							<h3>Launch Trip!</h3>
+							<p>We sent a group of alumni and students to Kennedy Space Center where they got to see the launch of the NG-24 Cargo Supply mission aboard the Falcon-9, meet with other cubesat teams, and visit the VAB.</p>
+							<div id="satellite-launch-slideshow"></div>
+						</section>
+
+						<script>
+							initDriveSlideshow('satellite-launch-slideshow', '1hJGwajAdYoca5EB5DVt9asEXOrLXZp5_', 'AIzaSyANcILY099U0b9G2Y1e4fn40oAdYxNlfqE', {
+								maxWidth: '100%',
+								height: '500px',
+								intervalMs: 4000
+							});
+						</script>
+
+						<hr />
+						<!-- Videos: SEAS Video + ISS Deployment -->
+						<section>
+							<div class="row gtr-150">
+								<div class="col-6 col-12-medium">
+									<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+										<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Harvard SEAS Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+									</div>
+									<p style="text-align:center; margin-top: 0.5em;">Harvard John. A. Paulson School of Engineering and Applied Sciences video of our HUCSat Launch</p>
+								</div>
+								<div class="col-6 col-12-medium">
+									<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+										<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/QFT4uhm8i50" title="HUCSat ISS Deployment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+									</div>
+									<p style="text-align:center; margin-top: 0.5em;">HUCSat Deployment off of the International Space Station</p>
+								</div>
+							</div>
+						</section>
 
 						<!-- Members -->
 						<section>
