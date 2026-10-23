@@ -7,6 +7,8 @@
 		<script src="assets/js/drive-slideshow.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+		<link rel="stylesheet" href="assets/css/hucsat-tracker.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,9 +53,42 @@
 						<section>
 							<h3>HUCSat Tracker</h3>
 							<p>Follow the real-time position of HUCSat using the satellite tracker developed by the team.</p>
-							<!-- JACK PUT HERE DO THIS HERE EMBED CODETracker integration goes here -->
-							<div class="tracker-placeholder" style="border: 2px dashed #ccc; padding: 3em; text-align: center; margin-bottom: 2em;">
-								<p>Satellite tracker coming soon</p>
+							<!-- Ported from CubeSATI_MissionStation; see assets/js/hucsat-tracker.js -->
+							<div id="hucsat-tracker">
+								<div class="ht-bar">
+									<span class="ht-title">HUCSAT LIVE TRACKER</span>
+									<span class="ht-clock" id="ht-clock">--:--:-- UTC</span>
+									<span class="ht-tle" id="ht-tle">LOADING TLE…</span>
+								</div>
+								<div class="ht-map-wrap">
+									<div id="ht-map"></div>
+									<div class="ht-hud"><span id="ht-hud-pos"></span>
+<span id="ht-hud-orbit"></span></div>
+								</div>
+								<div class="ht-grid">
+									<div class="ht-panel">
+										<div class="ht-panel-title">3D ORBIT</div>
+										<div id="ht-globe"></div>
+									</div>
+									<div class="ht-panel ht-approach">
+										<div class="ht-panel-title">APPROACH DATA</div>
+										<div class="ht-section-label" id="ht-next-label">Next pass over Harvard</div>
+										<div class="ht-line"><span class="ht-key">RISE</span><span class="ht-val" id="ht-aos">--</span></div>
+										<div class="ht-line"><span class="ht-key">CLOSEST</span><span class="ht-val" id="ht-cpa">--</span></div>
+										<div class="ht-line"><span class="ht-key">SET</span><span class="ht-val" id="ht-los">--</span></div>
+										<div class="ht-line"><span class="ht-key">RANGE</span><span class="ht-val" id="ht-min">--</span></div>
+										<div class="ht-section-label">Upcoming passes</div>
+										<div class="ht-upcoming" id="ht-upcoming-0">--</div>
+										<div class="ht-upcoming" id="ht-upcoming-1">--</div>
+										<div class="ht-upcoming" id="ht-upcoming-2">--</div>
+										<div class="ht-awaiting" id="ht-awaiting-feed">NO PASSES IN THE NEXT 2 DAYS</div>
+									</div>
+									<div class="ht-panel">
+										<div class="ht-panel-title">NEXT PASS SKY PLOT</div>
+										<canvas id="ht-polar"></canvas>
+									</div>
+								</div>
+								<p class="ht-note">Positions are computed live in your browser from HUCSat's latest orbital elements (NORAD 69794, via <a href="https://celestrak.org">CelesTrak</a>). Passes count once HUCSat climbs above 30° elevation at our ground station on the SEC roof; the red ring on the map shows that coverage area.</p>
 							</div>
 						</section>
 						<hr />
@@ -149,6 +184,13 @@ The satellite is expected to remain operational through the end of 2027, during 
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<!-- HUCSat Tracker -->
+			<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+			<script src="assets/js/L.Terminator.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.1/dist/globe.gl.min.js"></script>
+			<script src="assets/js/hucsat-tracker.js"></script>
 
 	</body>
 </html>
