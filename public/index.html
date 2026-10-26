@@ -6,6 +6,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/home.css?v=2" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+		<link rel="stylesheet" href="assets/css/hucsat-tracker.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +53,7 @@
 
 				<!-- About -->
 				<section id="one" class="spotlight style1 bottom">
-					<span class="image fit main"><img src="images/HuacClubwide.webp" alt="HUAC Team" /></span>
+					<span class="image fit main"><img src="images/optimized/HuacClubwide.webp" alt="HUAC Team" /></span>
 					<div class="content">
 						<div class="container">
 							<header>
@@ -62,21 +65,96 @@
 					<a href="#two" class="goto-next scrolly">Next</a>
 				</section>
 
-				<!-- JACK HERE Tracker -->
-				<section id="two" class="spotlight style2 right">
-					<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
-					<div class="content">
-						<header>
+				<!-- HUCSat Tracker -->
+				<section id="two" class="wrapper style1">
+					<div class="container">
+						<header class="major">
 							<h2>Track HUCSat Live</h2>
+							<p>Follow HUCSat's current orbit in real time using the ground station tracker built by the Satellite Team.</p>
+							<ul class="actions special">
+								<li><a href="satellite.html#hucsat-tracker" class="button">Learn more about our CubeSat project</a></li>
+							</ul>
 						</header>
-						<p>Follow HUCSat's current orbit in real time using the ground station tracker built by the Satellite Team.</p>
-						<ul class="actions">
-							<li><a href="tracker.html" class="button">View Tracker</a></li>
+						<!-- Ported from CubeSATI_MissionStation; see assets/js/hucsat-tracker.js -->
+						<div id="hucsat-tracker">
+							<div class="ht-bar">
+								<span class="ht-title">HUCSAT LIVE TRACKER</span>
+								<span class="ht-clock" id="ht-clock">--:--:-- UTC</span>
+								<span class="ht-tle" id="ht-tle">LOADING TLE...</span>
+							</div>
+							<div class="ht-map-wrap">
+								<div id="ht-map"></div>
+								<div class="ht-hud">
+									<span id="ht-hud-pos"></span>
+									<span id="ht-hud-orbit"></span>
+								</div>
+							</div>
+							<div class="ht-grid">
+								<div class="ht-panel">
+									<div class="ht-panel-title">3D ORBIT</div>
+									<div id="ht-globe"></div>
+								</div>
+								<div class="ht-panel ht-approach">
+									<div class="ht-panel-title">APPROACH DATA</div>
+									<div class="ht-section-label" id="ht-next-label">Next pass over Harvard</div>
+									<div class="ht-line"><span class="ht-key">RISE</span><span class="ht-val" id="ht-aos">--</span></div>
+									<div class="ht-line"><span class="ht-key">CLOSEST</span><span class="ht-val" id="ht-cpa">--</span></div>
+									<div class="ht-line"><span class="ht-key">SET</span><span class="ht-val" id="ht-los">--</span></div>
+									<div class="ht-line"><span class="ht-key">RANGE</span><span class="ht-val" id="ht-min">--</span></div>
+									<div class="ht-section-label">Upcoming passes</div>
+									<div class="ht-upcoming" id="ht-upcoming-0">--</div>
+									<div class="ht-upcoming" id="ht-upcoming-1">--</div>
+									<div class="ht-upcoming" id="ht-upcoming-2">--</div>
+									<div class="ht-awaiting" id="ht-awaiting-feed">NO PASSES IN THE NEXT 2 DAYS</div>
+								</div>
+								<div class="ht-panel">
+									<div class="ht-panel-title">NEXT PASS SKY PLOT</div>
+									<canvas id="ht-polar"></canvas>
+								</div>
+							</div>
+							<p class="ht-note">Positions are computed live in your browser from HUCSat's latest orbital elements (NORAD 69794, via <a href="https://celestrak.org">CelesTrak</a>). Passes count once HUCSat climbs above 30° elevation at our ground station on the SEC roof; the red ring on the map shows that coverage area.</p>
+						</div>
+						<p><a href="https://app.tinygs.com/satellite/HUCSat" target="_blank" rel="noopener noreferrer">View HUCSat on TinyGS</a></p>
+					</div>
+				</section>
+
+				<!-- King Crimson -->
+				<section id="king-crimson" class="wrapper style1 home-feature" aria-labelledby="king-crimson-title">
+					<div class="container">
+						<header class="major">
+							<p class="home-feature__eyebrow">Rocketry · King Crimson</p>
+							<h2 id="king-crimson-title">Our first step into competitive rocketry</h2>
+							<p>Meet King Crimson, HUAC's first IREC competition rocket, designed to reach 10,000 feet using a commercial motor.</p>
+						</header>
+						<figure class="home-feature__figure">
+							<a href="rocketry.html#irec" aria-label="Explore the King Crimson IREC rocket">
+								<img src="images/rocketry/irec-openrocket.png" alt="OpenRocket design of King Crimson showing the rocket layout and simulated flight performance" width="2120" height="602" loading="lazy" decoding="async" />
+							</a>
+							<figcaption>Current OpenRocket design and simulated performance.</figcaption>
+						</figure>
+						<ul class="actions special">
+							<li><a href="rocketry.html#irec" class="button primary">Explore King Crimson <span aria-hidden="true">&rarr;</span></a></li>
 						</ul>
 					</div>
 				</section>
 
-			<!-- Footer -->
+			<!-- VFS competition -->
+<section id="vfs-competition" class="wrapper style1 home-feature home-feature--uav" aria-labelledby="home-vfs-title">
+<div class="container">
+<header class="major">
+<p class="home-feature__eyebrow">UAV · Crimson VTOL Systems</p>
+<h2 id="home-vfs-title">Taking vertical flight to competition</h2>
+<p>Follow Crimson VTOL Systems as HUAC's UAV Team develops a new aircraft for the 2027 VFS Design-Build-Vertical Flight competition.</p>
+</header>
+<figure class="home-feature__figure">
+<a href="uav.html#vfs-competition" aria-label="Explore HUAC's VFS competition project"><img src="images/uav/prototype-field.jpg" alt="HUAC's 2025–26 quadplane prototype at the field" width="1600" height="1200" loading="lazy" decoding="async" /></a>
+<figcaption>The 2025–26 prototype. A new hexacopter is in development for 2027.</figcaption>
+</figure>
+<ul class="actions special"><li><a href="uav.html#vfs-competition" class="button primary">Explore our VFS project <span aria-hidden="true">&rarr;</span></a></li></ul>
+</div>
+</section>
+
+<!-- Footer -->
 				<footer id="footer">
 					<h3>Contact Us</h3>
 					<ul class="icons">
@@ -100,6 +178,11 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
+			<script src="assets/js/L.Terminator.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/satellite.js@5.0.0/dist/satellite.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.1/dist/globe.gl.min.js"></script>
+			<script src="assets/js/hucsat-tracker.js"></script>
 
 	</body>
 </html>

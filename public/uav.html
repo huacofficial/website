@@ -1,76 +1,95 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
 		<title>HUAC UAV Team</title>
 		<link rel="icon" type="image/png" href="images/HuacIcon.png">
 		<meta charset="utf-8" />
+		<meta name="description" content="Explore HUAC UAV engineering, Crimson VTOL Systems development for the 2027 VFS competition, and student aircraft projects." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="assets/js/drive-slideshow.js"></script>
+		<link rel="stylesheet" href="assets/css/uav.css?v=1" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&family=Zen+Dots&display=swap" rel="stylesheet">
 	</head>
-	<body class="is-preload">
+	<body class="is-preload uav-page">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header">
 					<h1 id="logo"><a href="index.html">Harvard Undergraduate Aerospace Collective
 					</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<li>
-									<a href="#">Teams</a>
-									<ul>
-										<li><a href="satellite.html">Satellite</a></li>
-										<li><a href="rocketry.html">Rocketry</a></li>
-										<li><a href="uav.html">UAV</a></li>
-									</ul>
-								</li>
-								<li><a href="leadership.html">Leadership</a></li>
-								<li><a href="sponsors.html">Sponsors</a></li>
-							</li>
-						</ul>
-					</nav>
+					<nav id="nav" aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="#">Teams</a><ul><li><a href="satellite.html">Satellite</a></li><li><a href="rocketry.html">Rocketry</a></li><li><a href="uav.html" aria-current="page">UAV</a></li></ul></li><li><a href="leadership.html">Leadership</a></li><li><a href="sponsors.html">Sponsors</a></li></ul></nav>
 				</header>
 				<!-- Main -->
-				<div id="main" class="wrapper style1">
-					<div class="container">
 
-						<!-- Team Intro -->
-						<header class="major">
-							<h2>UAV Team</h2>
-							<p>The UAV Team was founded in 2026 and is preparing to compete in the Vertical Flight Society’s Design-Build-Vertical Flight Competition in 2027. The team is currently iterating their UAV design and preparing their aircraft for the firefighting requirements of the competition in April.</p>
-						</header>
+<main id="main" class="wrapper style1">
+<div class="container">
+<header class="major">
+<h2>UAV Team</h2>
+<p>From custom airframes to flight controls, HUAC's UAV Team brings mechanical, electrical, and software engineering together to design, build, and test unmanned aircraft. Our Crimson VTOL Systems project is preparing for the 2027 Vertical Flight Society competition.</p>
+</header>
+<nav class="uav-nav" aria-label="UAV page sections"><a href="#vfs-competition">VFS competition</a><a href="#aircraft-development">Aircraft development</a><a href="#prototype">2025–26 prototype</a><a href="#onboarding">Onboarding</a></nav>
+<section class="uav-section" id="vfs-competition" aria-labelledby="vfs-title">
+<p class="uav-eyebrow">Crimson VTOL Systems · 2026–27</p>
+<h3 id="vfs-title">Building for the VFS Design-Build-Vertical Flight competition</h3>
+<p>The Vertical Flight Society's Design-Build-Vertical Flight (DBVF) competition challenges university teams to develop an electric vertical takeoff and landing aircraft for a practical mission. The 2026–27 scenario focuses on search and rescue: maneuvering through constrained terrain, delivering supplies accurately, and retrieving a simulated survivor payload.</p>
+<p>HUAC's current development program brings together airframe, payload, autonomy and ground-station, and power and controls work. The goal is reliable, precise flight and repeatable payload handling, supported by analysis, bench testing, and progressive flight validation.</p>
+<dl class="uav-specs"><div><dt>Program</dt><dd>VFS DBVF 2026–27</dd></div><div><dt>Team</dt><dd>Crimson VTOL Systems</dd></div><div><dt>Fly-off</dt><dd>April 6–9, 2027 · Maryland</dd></div></dl>
+<p class="uav-source">Mission details and event dates: <a href="https://vtol.org/fly" target="_blank" rel="noopener noreferrer">Official VFS competition page</a>.</p>
+</section>
+<section class="uav-section" id="aircraft-development" aria-labelledby="aircraft-title">
+<p class="uav-eyebrow">Current aircraft development</p>
+<h3 id="aircraft-title">Two hexacopter concepts, one testing-driven decision</h3>
+<p>The team's configuration study compares structural mass, hover energy, thrust margin, cost, and integration risk. Two six-motor architectures remain under consideration; final selection will follow propulsion and structural testing.</p>
+<div class="uav-cards uav-cards--two">
+<article><h4>Conventional Hex-X</h4><p>Six equally spaced motors on carbon-fiber arms provide a symmetric baseline with established flight-control support. The tradeoff is a larger footprint and more structural material.</p></article>
+<article><h4>Alternating-height hexacopter</h4><p>Three motors sit above and three below the arm plane, allowing adjacent propeller disks to overlap. The team is evaluating whether reduced size and structural mass outweigh rotor interference and mounting complexity.</p></article>
+</div>
+<div class="uav-cards">
+<article><h4>Airframe &amp; propulsion</h4><p>Planned thrust-stand tests will measure propulsion performance and rotor interference. CAD and structural simulation will inform stiffness, deflection, and propeller clearance.</p></article>
+<article><h4>Payload &amp; autonomy</h4><p>Payload mechanisms will progress through prototypes and tests alongside flight-control, navigation, telemetry, and ground-station integration.</p></article>
+<article><h4>Power &amp; validation</h4><p>Battery sizing and power distribution support the complete aircraft. Bench checks, loaded-flight testing, and mission rehearsals will guide refinement before competition.</p></article>
+</div>
+</section>
+<section class="uav-section" id="prototype" aria-labelledby="prototype-title">
+<p class="uav-eyebrow">2025–26 · First-generation aircraft</p>
+<h3 id="prototype-title">Lessons from the lift-plus-cruise prototype</h3>
+<p>The team's first aircraft combined four vertical lift motors with a separate forward cruise motor, foam wings, carbon-fiber structure, and 3D-printed components. Developed around the previous season's wildfire-response scenario, it included a servo-driven mechanism for collecting and releasing sandbag payload bundles.</p>
+<p>Students built and integrated the airframe, electronics, and payload system, including deployment and impact testing. The initial flight attempt exposed stability and structural weaknesses. Those lessons now inform a development approach with shorter design-build-test cycles and earlier validation of flight performance.</p>
+<div class="onboarding-carousel project-photo-carousel" role="region" aria-roledescription="carousel" aria-label="Prototype development" data-launch-carousel>
+<div class="onboarding-carousel__track" id="uav-prototype-track" tabindex="0" aria-label="Photos. Use left and right arrow keys to browse.">
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 6"><a href="images/uav/prototype-field.jpg" aria-label="View full photo: The 2025â€“26 quadplane prototype at the field"><img src="images/uav/prototype-field.jpg" alt="The 2025â€“26 quadplane prototype at the field" width="1600" height="1200" loading="lazy" decoding="async" /></a><figcaption>The 2025â€“26 quadplane prototype at the field</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 6"><a href="images/uav/prototype-assembly.jpg" aria-label="View full photo: Integrating the lift-plus-cruise airframe"><img src="images/uav/prototype-assembly.jpg" alt="Integrating the lift-plus-cruise airframe" width="1600" height="1200" loading="lazy" decoding="async" /></a><figcaption>Integrating the lift-plus-cruise airframe</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 6"><a href="images/uav/prototype-wings.jpg" aria-label="View full photo: Foam-wing fabrication and airframe assembly"><img src="images/uav/prototype-wings.jpg" alt="Foam-wing fabrication and airframe assembly" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>Foam-wing fabrication and airframe assembly</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 6"><a href="images/uav/payload-mechanism.jpg" aria-label="View full photo: Prototype payload pickup and release mechanism"><img src="images/uav/payload-mechanism.jpg" alt="Prototype payload pickup and release mechanism" width="1600" height="1200" loading="lazy" decoding="async" /></a><figcaption>Prototype payload pickup and release mechanism</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 6"><a href="images/uav/prototype-electronics.jpg" aria-label="View full photo: Bench integration of the propulsion electronics"><img src="images/uav/prototype-electronics.jpg" alt="Bench integration of the propulsion electronics" width="1600" height="1200" loading="lazy" decoding="async" /></a><figcaption>Bench integration of the propulsion electronics</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 6"><a href="images/uav/prototype-machining.jpg" aria-label="View full photo: Machining components for the aircraft"><img src="images/uav/prototype-machining.jpg" alt="Machining components for the aircraft" width="1600" height="1200" loading="lazy" decoding="async" /></a><figcaption>Machining components for the aircraft</figcaption></figure>
+</div>
+<div class="onboarding-carousel__controls" hidden><button type="button" data-carousel-prev aria-controls="uav-prototype-track" aria-label="Previous prototype development photo">&#8592;</button><span data-carousel-count aria-live="polite" aria-atomic="true">1 / 6</span><button type="button" data-carousel-next aria-controls="uav-prototype-track" aria-label="Next prototype development photo">&#8594;</button></div>
+</div>
+</section>
+<section class="uav-section" id="onboarding" aria-labelledby="onboarding-title">
+<p class="uav-eyebrow">New-member projects · Fall 2026</p>
+<h3 id="onboarding-title">From a box of electronics to a custom quadcopter</h3>
+<p>New members work in small teams to build a four-motor aircraft using shared electrical components. The project introduces airframe CAD, mounting structures, soldering, wiring diagrams, and ArduPilot configuration, followed by a design presentation and a fly-off intended to demonstrate steady flight and roll, pitch, and yaw control.</p>
+<div class="onboarding-carousel project-photo-carousel" role="region" aria-roledescription="carousel" aria-label="Onboarding projects" data-launch-carousel>
+<div class="onboarding-carousel__track" id="uav-onboarding-track" tabindex="0" aria-label="Photos. Use left and right arrow keys to browse.">
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 6"><a href="images/uav/onboarding-build.jpg" aria-label="View full photo: New members assembling their quadcopter"><img src="images/uav/onboarding-build.jpg" alt="New members assembling their quadcopter" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>New members assembling their quadcopter</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 6"><a href="images/uav/onboarding-electronics.jpg" aria-label="View full photo: Integrating flight electronics and motor wiring"><img src="images/uav/onboarding-electronics.jpg" alt="Integrating flight electronics and motor wiring" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>Integrating flight electronics and motor wiring</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 6"><a href="images/uav/onboarding-airframe.jpg" aria-label="View full photo: Flight electronics fitted to a student-built airframe"><img src="images/uav/onboarding-airframe.jpg" alt="Flight electronics fitted to a student-built airframe" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>Flight electronics fitted to a student-built airframe</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 6"><a href="images/uav/onboarding-review.jpg" aria-label="View full photo: Presenting an onboarding aircraft design"><img src="images/uav/onboarding-review.jpg" alt="Presenting an onboarding aircraft design" width="1600" height="1127" loading="lazy" decoding="async" /></a><figcaption>Presenting an onboarding aircraft design</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 6"><a href="images/uav/onboarding-team.jpg" aria-label="View full photo: Sharing a completed quadcopter with the team"><img src="images/uav/onboarding-team.jpg" alt="Sharing a completed quadcopter with the team" width="1600" height="1200" loading="lazy" decoding="async" /></a><figcaption>Sharing a completed quadcopter with the team</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 6"><a href="images/uav/onboarding-group.jpg" aria-label="View full photo: The fall 2026 onboarding teams and their aircraft"><img src="images/uav/onboarding-group.jpg" alt="The fall 2026 onboarding teams and their aircraft" width="1600" height="1094" loading="lazy" decoding="async" /></a><figcaption>The fall 2026 onboarding teams and their aircraft</figcaption></figure>
+</div>
+<div class="onboarding-carousel__controls" hidden><button type="button" data-carousel-prev aria-controls="uav-onboarding-track" aria-label="Previous onboarding projects photo">&#8592;</button><span data-carousel-count aria-live="polite" aria-atomic="true">1 / 6</span><button type="button" data-carousel-next aria-controls="uav-onboarding-track" aria-label="Next onboarding projects photo">&#8594;</button></div>
+</div>
+</section>
+<section class="uav-section" aria-labelledby="uav-members-title"><h3 id="uav-members-title">UAV Team Members Spring 2026</h3><span class="image fit"><img src="images/optimized/UavTeam.webp" alt="UAV Team Spring 2026" loading="lazy" /></span></section>
+</div>
+</main>
 
-						<!-- Prototyping Gallery -->
-						<section>
-							<h3>Design & Prototyping</h3>
-							<div id="uav-slideshow"></div>
-						</section>
-
-						<script>
-							initDriveSlideshow('uav-slideshow', '1meh5ld8krkq5Ckz-SbHU5fGSV9Q4gc0y', 'AIzaSyANcILY099U0b9G2Y1e4fn40oAdYxNlfqE', {
-								maxWidth: '800px',
-								height: '650px',
-								intervalMs: 4000
-							});
-						</script>
-
-						<hr />
-
-						<!-- Members -->
-						<section>
-							<h3>UAV Team Members Spring 2026</h3>
-							<span class="image fit" style="width: 80%; margin: 0 auto; display: block;"><img src="images/UavTeam.webp" alt="UAV Team Spring 2026" /></span>
-						</section>
-
-					</div>
-				</div>
 			<!-- Footer -->
 				<footer id="footer">
 					<h3>Contact Us</h3>
@@ -95,6 +114,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/launch-carousel.js?v=2"></script>
 
 	</body>
 </html>

@@ -1,0 +1,472 @@
+.rocketry-page #main.wrapper {
+	background: #1c1d26;
+}
+
+.rocketry-page #main > .container {
+	padding-top: 5rem;
+}
+
+.rocketry-page .rocketry-project-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.25rem;
+	justify-content: center;
+	margin: 0 0 2rem;
+}
+
+.rocketry-page .rocketry-project-nav a {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 0.9rem;
+	padding: 0.25rem 0;
+}
+
+.rocketry-page .rocketry-project-nav a:hover {
+	border-bottom-color: #e44c65;
+	color: #e44c65;
+}
+
+.rocketry-page .rocketry-project {
+	align-items: center;
+	background: rgba(255, 255, 255, 0.035);
+	border-left: 4px solid #e44c65;
+	border-radius: 4px;
+	display: grid;
+	gap: 3rem;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+	margin: 1.5rem 0;
+	padding: 2rem;
+	scroll-margin-top: 6rem;
+}
+
+.rocketry-page .rocketry-project:nth-child(even) .rocketry-project__media {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.rocketry-page .rocketry-project__eyebrow {
+	color: #e44c65;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	margin-bottom: 0.5rem;
+	text-transform: uppercase;
+}
+
+.rocketry-page .rocketry-project__copy h3 {
+	color: #fff;
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+}
+
+.rocketry-page .rocketry-project__copy p:last-child {
+	margin-bottom: 0;
+}
+
+.rocketry-page .rocketry-project__media {
+	aspect-ratio: 16 / 10;
+	background: #272833;
+	border: 1px dashed rgba(255, 255, 255, 0.3);
+	display: grid;
+	min-height: 0;
+	min-width: 0;
+	overflow: hidden;
+	place-items: center;
+	padding: 1rem;
+	position: relative;
+	text-align: center;
+}
+
+.rocketry-page .rocketry-project__media span {
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 0.9rem;
+}
+
+.rocketry-page .rocketry-project__media img {
+	position: absolute;
+	inset: 0;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.rocketry-page #forward-unto-dawn .rocketry-project__media img {
+	object-fit: contain;
+}
+
+.rocketry-page .rocketry-project__media--openrocket {
+	aspect-ratio: 2120 / 602;
+}
+
+.rocketry-page .rocketry-project__media--openrocket img {
+	object-fit: contain;
+}
+
+.rocketry-page .irec-details {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	margin: 0 0 2rem;
+	padding: 2.5rem 0 3rem;
+}
+
+.rocketry-page .irec-details h4 {
+	color: #fff;
+	font-size: 1.35rem;
+	margin: 0 0 0.8rem;
+}
+
+.rocketry-page .irec-overview {
+	max-width: 820px;
+}
+
+.rocketry-page .irec-specs {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	margin: 2rem 0;
+}
+
+.rocketry-page .irec-specs div {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 0.9rem 1rem;
+}
+
+.rocketry-page .irec-specs dt {
+	color: #e44c65;
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.rocketry-page .irec-specs dd {
+	color: #fff;
+	font-size: 1.2rem;
+	margin: 0.25rem 0 0;
+}
+
+.rocketry-page .irec-detail-grid {
+	display: grid;
+	gap: 3rem;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin-top: 2.5rem;
+}
+
+.rocketry-page .irec-detail-grid article {
+	border-left: 4px solid #e44c65;
+	padding-left: 1.25rem;
+}
+
+.rocketry-page .irec-detail-grid article p:last-child {
+	margin-bottom: 0;
+}
+
+.rocketry-page .irec-gallery-section {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	margin-top: 2.5rem;
+	padding-top: 2rem;
+}
+
+.rocketry-page .irec-gallery {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.rocketry-page .irec-gallery figure {
+	margin: 0;
+	min-width: 0;
+}
+
+.rocketry-page .irec-gallery a {
+	border: 0;
+	display: block;
+}
+
+.rocketry-page .irec-gallery img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+.rocketry-page .irec-gallery--cad img {
+	aspect-ratio: 1;
+	object-fit: contain;
+	background: #fff;
+}
+
+.rocketry-page .irec-gallery figcaption {
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 0.85rem;
+	line-height: 1.5;
+	margin-top: 0.75rem;
+}
+
+.rocketry-page .irec-test-plan {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	margin-top: 2.5rem;
+	padding-top: 2rem;
+}
+
+.rocketry-page .irec-test-plan ol {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	list-style: none;
+	margin: 1.5rem 0 0;
+	padding: 0;
+}
+
+.rocketry-page .irec-test-plan li {
+	border-top: 3px solid #e44c65;
+	padding-top: 0.8rem;
+}
+
+.rocketry-page .irec-test-plan li span {
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	margin-bottom: 0.4rem;
+}
+
+.rocketry-page .irec-test-plan li p {
+	font-size: 0.9rem;
+	margin-bottom: 0;
+}
+
+.rocketry-page .rocketry-details {
+	margin: 0 0 3rem;
+	padding: 1rem 0 2rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rocketry-page .rocketry-details h4 {
+	color: #fff;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	margin: 0 0 0.8rem;
+}
+
+.rocketry-page .project-specs,
+.rocketry-page .project-detail-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin: 1.5rem 0 2rem;
+}
+
+.rocketry-page .project-specs > div {
+	background: rgba(255, 255, 255, 0.035);
+	border-left: 3px solid #e44c65;
+	padding: 1rem;
+}
+
+.rocketry-page .project-specs dt {
+	color: #e44c65;
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.rocketry-page .project-specs dd {
+	color: #fff;
+	margin: 0.4rem 0 0;
+}
+
+.rocketry-page .project-detail-grid article {
+	border-left: 3px solid #e44c65;
+	padding-left: 1.25rem;
+}
+
+.rocketry-page .project-detail-grid article p:last-child {
+	margin-bottom: 0;
+}
+
+.rocketry-page .project-gallery-section {
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	margin: 2rem 0;
+	padding-top: 2rem;
+}
+
+.rocketry-page .project-gallery {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.rocketry-page .project-gallery figure {
+	margin: 0;
+	min-width: 0;
+}
+
+.rocketry-page .project-gallery a {
+	border: 0;
+	display: block;
+}
+
+.rocketry-page .project-gallery img {
+	aspect-ratio: 4 / 3;
+	background: #272833;
+	border-radius: 4px;
+	display: block;
+	height: auto;
+	object-fit: contain;
+	width: 100%;
+}
+
+.rocketry-page .project-gallery--cad img {
+	background: #fff;
+}
+
+.rocketry-page .project-gallery-placeholder {
+	aspect-ratio: 4 / 3;
+	background: #272833;
+	border: 1px dashed rgba(255, 255, 255, 0.3);
+	border-radius: 4px;
+	color: rgba(255, 255, 255, 0.6);
+	display: grid;
+	padding: 1.5rem;
+	place-items: center;
+	text-align: center;
+}
+
+.rocketry-page .project-gallery figcaption {
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 0.85rem;
+	line-height: 1.5;
+	margin-top: 0.75rem;
+}
+
+.rocketry-page .project-source {
+	font-size: 0.9rem;
+	margin-bottom: 0;
+}
+
+@media screen and (max-width: 980px) {
+	.rocketry-page .project-detail-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.rocketry-page .rocketry-project--onboarding {
+	align-items: start;
+}
+
+.rocketry-page .onboarding-carousel {
+	min-width: 0;
+}
+
+.rocketry-page .project-photo-carousel {
+	max-width: 800px;
+	margin: 1.5rem auto 0;
+}
+
+.rocketry-page .project-photo-carousel--cad .onboarding-carousel__slide img {
+	background: #fff;
+}
+
+.rocketry-page .onboarding-carousel__track {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: thin;
+	overscroll-behavior-x: contain;
+}
+
+.rocketry-page .onboarding-carousel__slide {
+	flex: 0 0 100%;
+	margin: 0;
+	min-width: 0;
+	scroll-snap-align: start;
+}
+
+.rocketry-page .onboarding-carousel__slide a {
+	display: block;
+	border: 0;
+}
+
+.rocketry-page .onboarding-carousel__slide img,
+.rocketry-page .onboarding-carousel__slide video {
+	aspect-ratio: 4 / 3;
+	background: #272833;
+	border-radius: 4px;
+	display: block;
+	height: auto;
+	object-fit: contain;
+	width: 100%;
+}
+
+.rocketry-page .onboarding-carousel__slide figcaption {
+	font-size: 0.85rem;
+	line-height: 1.5;
+	padding: 0.75rem 0.25rem;
+}
+
+.rocketry-page .onboarding-carousel__controls {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 0.75rem;
+}
+
+.rocketry-page .onboarding-carousel__controls[hidden] {
+	display: none;
+}
+
+.rocketry-page .onboarding-carousel__controls button {
+	font-size: 1.2rem;
+	min-width: 3rem;
+	padding: 0 1rem;
+}
+
+.rocketry-page .onboarding-carousel__track:focus-visible,
+.rocketry-page .onboarding-carousel__controls button:focus-visible {
+	outline: 2px solid #e44c65;
+	outline-offset: 4px;
+}
+
+.rocketry-page .rocketry-team {
+	border-top: 4px solid #e44c65;
+	margin-top: 2rem;
+	padding-top: 2rem;
+}
+
+.rocketry-page .rocketry-team h3 {
+	color: #fff;
+}
+
+.rocketry-page .rocketry-team img {
+	display: block;
+	width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+	.rocketry-page #main > .container {
+		padding-top: 4rem;
+	}
+
+	.rocketry-page .rocketry-project {
+		gap: 1.5rem;
+		grid-template-columns: minmax(0, 1fr);
+		padding: 1.25rem;
+	}
+
+	.rocketry-page .rocketry-project:nth-child(even) .rocketry-project__media {
+		grid-column: auto;
+		grid-row: auto;
+	}
+
+	.rocketry-page .irec-specs {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.rocketry-page .irec-detail-grid,
+	.rocketry-page .project-specs,
+	.rocketry-page .project-gallery,
+	.rocketry-page .irec-gallery,
+	.rocketry-page .irec-test-plan ol {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

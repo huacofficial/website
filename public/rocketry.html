@@ -3,16 +3,16 @@
 	<head>
 		<title>HUAC Rocketry Team</title>
 		<link rel="icon" type="image/png" href="images/HuacIcon.png">
-		<script src="assets/js/drive-slideshow.js"></script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/rocketry.css?v=10" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&family=Zen+Dots&display=swap" rel="stylesheet">
 	</head>
-	<body class="is-preload">
+	<body class="is-preload rocketry-page">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -38,41 +38,269 @@
 					</nav>
 				</header>
 				<!-- Main -->
-				<div id="main" class="wrapper style1">
+				<main id="main" class="wrapper style1">
 					<div class="container">
-
-						<!-- Team Intro -->
 						<header class="major">
 							<h2>Rocketry Team</h2>
-							<p>The Rocketry Team, established in 2022, designs, builds, and launches rockets throughout the academic year, progressing through NAR high power rocketry certification levels L1 to L3. The team is preparing to compete in the 2027 International Rocket Engineering Competition (IREC). Additionally, members are developing a regeneratively cooled (regen) liquid rocket engine as part of an advanced propulsion initiative: Forward Unto Dawn.</p>
-							<h3>Other Projects</h3>
-							<p>RocketLink: RocketLink is a LoRa-based wireless telemetry system that transmits live GPS position, altitude, and IMU orientation data from the rocket to a ground station laptop in real time. It was flight tested on micro-G’s LOX-ethanol K-103 vehicle. 
-Mojave Sphinx: Half-Cat Rocketry’s Mojave Sphinx is an open-source liquid bi-propellant rocket that our team machined and assembled fully in-house, and the next static fire will be in Fall of 2027 (date pending).
-</p>
+							<p>From low-power flights to liquid propulsion, HUAC Rocketry gives students hands-on experience designing, building, testing, and launching aerospace systems.</p>
 						</header>
 
-						<!-- Recent Pictures -->
-						<section>
-							<h3>Recent Pictures</h3>
-							<div id="rocketry-slideshow"></div>
-						</section>
-						<script>
-							initDriveSlideshow('rocketry-slideshow', '1phN1hAs5pukhd4umJrP68DohzZJCcI1x', 'AIzaSyANcILY099U0b9G2Y1e4fn40oAdYxNlfqE', {
-								maxWidth: '800px',
-								height: '650px',
-								intervalMs: 4000
-							});
-						</script>
-						<hr />
+						<nav class="rocketry-project-nav" aria-label="Rocketry projects">
+							<a href="#irec">IREC</a>
+							<a href="#rocketlink">RocketLink</a>
+							<a href="#forward-unto-dawn">Forward Unto Dawn</a>
+							<a href="#mojave-sphinx">Mojave Sphinx</a>
+							<a href="#low-power">Onboarding</a>
+							<a href="#certifications">Certifications</a>
+						</nav>
 
-						<!-- Members -->
-						<section>
+						<section class="rocketry-projects" aria-label="Rocketry projects">
+							<article class="rocketry-project" id="irec">
+								<div class="rocketry-project__copy">
+									<p class="rocketry-project__eyebrow">2027 IREC · 10K COTS</p>
+									<h3>King Crimson</h3>
+									<p>King Crimson is HUAC’s first IREC entry: a single-stage, commercial off-the-shelf (COTS) rocket designed for a 10,000-foot competition flight using an AeroTech M2500T motor.</p>
+									<p>The team has completed 25 launches to date, including 19 low-power and six high-power flights. This category builds on that experience while bringing together vehicle integration, recovery, payload testing, and competition operations.</p>
+								</div>
+								<div class="rocketry-project__media rocketry-project__media--openrocket">
+									<img src="images/rocketry/irec-openrocket.png" alt="OpenRocket design and simulated flight summary for King Crimson" loading="lazy" />
+								</div>
+							</article>
+
+							<section class="irec-details" aria-label="King Crimson IREC details">
+								<div class="irec-overview">
+									<p class="rocketry-project__eyebrow">Vehicle and simulation</p>
+									<h4>A 10K flight with a research payload onboard</h4>
+									<p>The current design is 2.54 m long and 152.4 mm in diameter. OpenRocket models a 10,400 ft apogee, about 329 m/s peak speed, and 23.5 seconds to apogee. These are simulation results, not flight measurements; the team plans to update the model as the vehicle is assembled and measured.</p>
+								</div>
+								<dl class="irec-specs">
+									<div><dt>Competition target</dt><dd>10,000 ft</dd></div>
+									<div><dt>Modeled apogee</dt><dd>10,400 ft</dd></div>
+									<div><dt>Vehicle length</dt><dd>2.54 m</dd></div>
+									<div><dt>Airframe diameter</dt><dd>152.4 mm</dd></div>
+									<div><dt>Peak simulated speed</dt><dd>329 m/s</dd></div>
+									<div><dt>Payload form factor</dt><dd>2U CubeSat</dd></div>
+								</dl>
+
+								<div class="irec-detail-grid">
+									<article>
+										<p class="rocketry-project__eyebrow">Research payload</p>
+										<h4>Can cell-free protein synthesis survive launch?</h4>
+										<p>The roughly 2.1 kg, 2U-form-factor payload studies whether a cell-free protein synthesis (CFPS) reaction can operate after the vibration and acceleration of launch. It uses freeze-dried E. coli extract with no living cells.</p>
+										<p>Six sealed chambers compare rigid mounting with a TPU vibration-isolating lattice. Sensors record fluorescence, acceleration, and temperature through flight and recovery, with a matching ground-control unit for comparison.</p>
+									</article>
+									<article>
+										<p class="rocketry-project__eyebrow">Recovery and avionics</p>
+										<h4>Three stages, with redundant deployment</h4>
+										<p>The planned flight sequence is ascent, drogue descent after apogee, then main-parachute descent near 1,500 ft above ground. The recovery concept keeps the vehicle sections tethered together for landing and recovery.</p>
+										<p>A student-developed flight computer is planned as the primary controller, with an independent commercial altimeter as backup. The team’s ground tests and shakedown flights are intended to validate the integrated recovery system before qualification.</p>
+									</article>
+								</div>
+
+								<section class="irec-gallery-section" aria-labelledby="irec-cad-title">
+<p class="rocketry-project__eyebrow">Dual-deploy CAD</p>
+<h4 id="irec-cad-title">Inside the recovery avionics bay</h4>
+<div class="irec-gallery irec-gallery--cad"><figure><a href="images/rocketry/irec-dual-deploy-front.png" aria-label="View full image: Front view"><img src="images/rocketry/irec-dual-deploy-front.png" alt="Front view of the dual-deploy avionics bay CAD model" width="734" height="706" loading="lazy" decoding="async" /></a><figcaption>Front view</figcaption></figure>
+<figure><a href="images/rocketry/irec-dual-deploy-cutaway.png" aria-label="View full image: Internal mounting and cutaway"><img src="images/rocketry/irec-dual-deploy-cutaway.png" alt="Angled cutaway CAD view of the avionics bay and internal mounting structure" width="816" height="980" loading="lazy" decoding="async" /></a><figcaption>Internal mounting and cutaway</figcaption></figure>
+<figure><a href="images/rocketry/irec-dual-deploy-assembly.png" aria-label="View full image: Assembled avionics bay"><img src="images/rocketry/irec-dual-deploy-assembly.png" alt="CAD view of the assembled cylindrical dual-deploy avionics bay" width="690" height="746" loading="lazy" decoding="async" /></a><figcaption>Assembled avionics bay</figcaption></figure></div>
+</section>
+<section class="irec-gallery-section" aria-labelledby="irec-recovery-title">
+<p class="rocketry-project__eyebrow">Recovery sequence</p>
+<h4 id="irec-recovery-title">From ascent to parachute descent</h4>
+<p>Concept renderings show the planned recovery sequence, with a drogue parachute followed by main-parachute deployment.</p>
+<div class="irec-gallery"><figure><a href="images/rocketry/irec-recovery-stage-1.jpg" aria-label="View full image: 1 · Ascent configuration"><img src="images/rocketry/irec-recovery-stage-1.jpg" alt="King Crimson recovery concept with the rocket fully assembled" width="1920" height="1920" loading="lazy" decoding="async" /></a><figcaption>1 · Ascent configuration</figcaption></figure>
+<figure><a href="images/rocketry/irec-recovery-stage-2.jpg" aria-label="View full image: 2 · Drogue descent"><img src="images/rocketry/irec-recovery-stage-2.jpg" alt="Recovery concept with separated rocket sections tethered beneath the drogue parachute" width="1920" height="1920" loading="lazy" decoding="async" /></a><figcaption>2 · Drogue descent</figcaption></figure>
+<figure><a href="images/rocketry/irec-recovery-stage-3.jpg" aria-label="View full image: 3 · Main-parachute descent"><img src="images/rocketry/irec-recovery-stage-3.jpg" alt="Recovery concept with the main and drogue parachutes deployed and rocket sections tethered together" width="1920" height="1920" loading="lazy" decoding="async" /></a><figcaption>3 · Main-parachute descent</figcaption></figure></div>
+</section>
+
+<div class="irec-test-plan">
+									<p class="rocketry-project__eyebrow">Target schedule · weather and launch-site dependent</p>
+									<h4>From subscale tests to competition configuration</h4>
+									<ol>
+										<li><span>Oct–Nov 2026</span><p>Procure components, build the subscale recovery demonstration, and complete ground checks.</p></li>
+										<li><span>Nov 2026</span><p>Fly the subscale vehicle to demonstrate the deployment sequence, then review flight data and revise the design.</p></li>
+										<li><span>Dec 2026–Jan 2027</span><p>Complete full-scale assembly and ground testing; target a full-scale shakedown flight in Arizona in January.</p></li>
+										<li><span>Feb 2027</span><p>Reserve an additional development flight if weather, launch access, or test findings require it.</p></li>
+										<li><span>Mar 2027</span><p>Complete remaining system checks and a qualification flight in the intended competition configuration.</p></li>
+										<li><span>Late Mar–Apr 2027</span><p>Keep a contingency reflight window and compile the final flight-test report.</p></li>
+									</ol>
+								</div>
+							</section>
+
+							<article class="rocketry-project" id="rocketlink">
+								<div class="rocketry-project__copy">
+									<p class="rocketry-project__eyebrow">Flight systems</p>
+									<h3>RocketLink</h3>
+									<p>RocketLink is a LoRa-based telemetry system that sends live GPS position, altitude, and IMU orientation from a rocket to a ground-station laptop.</p>
+									<p>The system has been flight-tested on micro-G’s LOX-ethanol K-103 vehicle, connecting onboard flight data with ground operations.</p>
+								</div>
+								<div class="rocketry-project__media">
+									<img src="images/rocketry/rocketlink-microg-launch.webp" alt="RocketLink-equipped rocket launching at a test site" loading="lazy" />
+								</div>
+							</article>
+
+							<section class="rocketry-details" aria-labelledby="rocketlink-details-title">
+								<h4 id="rocketlink-details-title">Live flight data, from the rocket to the ground</h4>
+								<dl class="project-specs">
+									<div><dt>Radio link</dt><dd>433 MHz LoRa</dd></div>
+									<div><dt>Update rate</dt><dd>About 2–4 Hz</dd></div>
+									<div><dt>Documented range</dt><dd>3–5 km, open line of sight</dd></div>
+								</dl>
+								<div class="project-detail-grid">
+									<article><h4>Onboard sensing</h4><p>An ESP32-S3 flight board combines an ICM20649 inertial measurement unit, M100 Mini GPS, and RFM96W radio. Packets carry position, altitude, three-axis acceleration and angular velocity, and estimated roll, pitch, and yaw.</p></article>
+									<article><h4>Ground-station viewer</h4><p>A matching ESP32-S3 receiver connects to a laptop over USB. The telemetry viewer displays a live 3D orientation model, sensor readouts, signal strength, and packet rate. A separate map plots GPS position and the flight path once the receiver has a fix.</p></article>
+									<article><h4>Flight-data logging</h4><p>The ground station saves received packets to numbered CSV files on its SD card. Timestamps, packet counts, radio-link quality, GPS, and inertial measurements support flight reconstruction and post-flight analysis.</p></article>
+								</div>
+								<section class="rocketry-details project-gallery-section" aria-labelledby="rocketlink-gallery-title">
+<h4 id="rocketlink-gallery-title">RocketLink hardware and field testing</h4>
+<div class="onboarding-carousel project-photo-carousel" role="region" aria-roledescription="carousel" aria-label="RocketLink hardware and field testing" data-launch-carousel>
+<div class="onboarding-carousel__track" id="rocketlink-photo-track" tabindex="0" aria-label="Photos. Use left and right arrow keys to browse.">
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 6"><a href="images/rocketry/rocketlink-microg-flight.jpg" aria-label="View full image: Micro-G launch"><img src="images/rocketry/rocketlink-microg-flight.jpg" alt="Micro-G rocket lifting off with RocketLink V1.0 onboard" width="1290" height="1121" loading="lazy" decoding="async" /></a><figcaption>Micro-G launch</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 6"><a href="images/rocketry/rocketlink-v1-1-installed.jpg" aria-label="View full image: V1.1 installed in the airframe"><img src="images/rocketry/rocketlink-v1-1-installed.jpg" alt="RocketLink v1.1 transmitter mounted inside the rocket airframe" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>V1.1 installed in the airframe</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 6"><a href="images/rocketry/rocketlink-v2-integration.jpg" aria-label="View full image: V2.0 vehicle integration"><img src="images/rocketry/rocketlink-v2-integration.jpg" alt="RocketLink v2.0 hardware integrated inside the micro-G rocket" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>V2.0 vehicle integration</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 6"><a href="images/rocketry/rocketlink-v2-testing.jpg" aria-label="View full image: V2.0 transmitter testing"><img src="images/rocketry/rocketlink-v2-testing.jpg" alt="RocketLink v2.0 transmitter test setup beside an open rocket airframe" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>V2.0 transmitter testing</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 6"><a href="images/rocketry/rocketlink-microg-station.jpg" aria-label="View full image: Micro-G station"><img src="images/rocketry/rocketlink-microg-station.jpg" alt="RocketLink receiver and telemetry laptop at the Micro-G ground station overlooking the launch pad" width="1600" height="1200" loading="lazy" decoding="async" /></a><figcaption>Micro-G station</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 6"><div class="project-gallery-placeholder">Flight data coming soon</div><figcaption>RocketLink flight data</figcaption></figure>
+</div>
+<div class="onboarding-carousel__controls" hidden>
+<button type="button" data-carousel-prev aria-controls="rocketlink-photo-track" aria-label="Previous RocketLink photo">&#8592;</button>
+<span data-carousel-count aria-live="polite" aria-atomic="true">1 / 6</span>
+<button type="button" data-carousel-next aria-controls="rocketlink-photo-track" aria-label="Next RocketLink photo">&#8594;</button>
+</div>
+</div>
+</section>
+<p class="project-source">Range and update rate depend on configuration and environmental conditions.</p>
+							</section>
+
+							<article class="rocketry-project" id="forward-unto-dawn">
+								<div class="rocketry-project__copy">
+									<p class="rocketry-project__eyebrow">Liquid propulsion</p>
+									<h3>Forward Unto Dawn</h3>
+									<p>FUD-1, Forward Unto Dawn, is a 250-lbf liquid rocket engine designed for ground testing. It pairs nitrous oxide with a 90/10 ethanol-water fuel blend and uses fuel flowing through the chamber wall to carry heat away before injection.</p>
+									<p>Led by designer Nicholas Bondar, the project brings together combustion analysis, cooling design, injector machining, and test-stand development. The design passed external review in August 2026 and is being prepared for printing.</p>
+								</div>
+								<div class="rocketry-project__media">
+									<img src="images/rocketry/forward-unto-dawn-engine.webp" alt="Forward Unto Dawn combustion chamber CAD rendering" loading="lazy" />
+								</div>
+							</article>
+
+							<section class="rocketry-details" aria-labelledby="fud-details-title">
+								<h4 id="fud-details-title">Designing a reusable ground-test engine</h4>
+								<dl class="project-specs">
+									<div><dt>Design thrust</dt><dd>250 lbf at sea level</dd></div>
+									<div><dt>Design chamber pressure</dt><dd>200 psia</dd></div>
+									<div><dt>Propellants</dt><dd>Nitrous oxide / ethanol-water</dd></div>
+									<div><dt>Chamber material</dt><dd>3D-printed 316L stainless steel</dd></div>
+									<div><dt>Cooling</dt><dd>38 axial channels + film cooling</dd></div>
+									<div><dt>Planned first firing</dt><dd>2 seconds</dd></div>
+								</dl>
+								<div class="project-detail-grid">
+									<article><h4>Analysis before hardware</h4><p>NASA CEA combustion studies and a sizing spreadsheet establish the engine geometry, with Rocket Propulsion Analysis used to check performance and cooling. The design uses a fuel-rich mixture to balance performance with the chamber's thermal requirements. These are design predictions awaiting test validation.</p></article>
+									<article><h4>Cooling and manufacturing</h4><p>The chamber and nozzle are designed as one laser powder bed fusion part with integrated cooling passages. An oxidizer-centered pintle injector is machined separately. External review led to channel-corner fillets and clamping features for post-machining; injector hardware has already been machined.</p></article>
+									<article><h4>Development and verification</h4><p>The planned program progresses from cold-flow checks to an initial two-second firing, then longer firings as results support them. Cooling-channel inspection, injector alignment, and potential coolant boiling remain development priorities before hot-fire testing.</p></article>
+								</div>
+								<section class="project-gallery-section" aria-labelledby="fud-gallery-title">
+<h4 id="fud-gallery-title">Engine design and test-stand development</h4>
+<div class="onboarding-carousel project-photo-carousel project-photo-carousel--cad" role="region" aria-roledescription="carousel" aria-label="Forward Unto Dawn engine and test-stand images" data-launch-carousel>
+<div class="onboarding-carousel__track" id="fud-photo-track" tabindex="0" aria-label="Images. Use left and right arrow keys to browse.">
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 4"><a href="images/rocketry/fud-engine-cutaway.jpg" aria-label="View full image: Engine assembly cutaway"><img src="images/rocketry/fud-engine-cutaway.jpg" alt="Engine assembly cutaway showing the injector and combustion chamber" width="976" height="586" loading="lazy" decoding="async" /></a><figcaption>Engine assembly cutaway</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 4"><a href="images/rocketry/fud-chamber-cad.jpg" aria-label="View full image: Chamber and nozzle CAD"><img src="images/rocketry/fud-chamber-cad.jpg" alt="CAD rendering of the chamber and nozzle designed for additive manufacturing" width="635" height="522" loading="lazy" decoding="async" /></a><figcaption>Chamber and nozzle CAD</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 4"><a href="images/rocketry/fud-test-stand-front.jpg" aria-label="View full image: Test stand: engine side"><img src="images/rocketry/fud-test-stand-front.jpg" alt="Front CAD view of the engine test stand and mounting plate" width="982" height="605" loading="lazy" decoding="async" /></a><figcaption>Test stand: engine side</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 4"><a href="images/rocketry/fud-test-stand-back.jpg" aria-label="View full image: Test stand: frame and bracing"><img src="images/rocketry/fud-test-stand-back.jpg" alt="Rear CAD view of the test stand showing its frame and bracing" width="927" height="633" loading="lazy" decoding="async" /></a><figcaption>Test stand: frame and bracing</figcaption></figure>
+</div>
+<div class="onboarding-carousel__controls" hidden>
+<button type="button" data-carousel-prev aria-controls="fud-photo-track" aria-label="Previous Forward Unto Dawn image">&#8592;</button>
+<span data-carousel-count aria-live="polite" aria-atomic="true">1 / 4</span>
+<button type="button" data-carousel-next aria-controls="fud-photo-track" aria-label="Next Forward Unto Dawn image">&#8594;</button>
+</div>
+</div>
+</section>
+<p class="project-source">Learn more on <a href="https://nicholasbondar-cmyk.github.io/" target="_blank" rel="noopener noreferrer">Rocketry Chief Engineer Nicholas Bondar's portfolio</a>.</p>
+							</section>
+
+							<article class="rocketry-project" id="mojave-sphinx">
+								<div class="rocketry-project__copy">
+									<p class="rocketry-project__eyebrow">Liquid rocket vehicle</p>
+									<h3>Mojave Sphinx</h3>
+									<p>Mojave Sphinx is HUAC-R's implementation of Half Cat Rocketry's open-source HCR-5100 liquid-bipropellant rocket. The team manufactured and assembled the reference design, integrating tanks, valves, engine hardware, and avionics to build experience in liquid propulsion.</p>
+<p>HUAC-R also fabricated and installed a dedicated static-fire test stand. Bringing the vehicle together gave members practical experience with machining, seals, fluid-system fittings, and mechanical and electrical interfaces.</p>
+<p>The initial static-fire attempt was unsuccessful because of fluid-system and sealing issues. The team is developing cold-flow characterization and planning instrumentation to check system behavior before corrective work and another static-fire campaign.</p>
+								</div>
+								<div class="rocketry-project__media">
+									<img src="images/rocketry/mojave-sphinx-static-fire.webp" alt="Mojave Sphinx rocket installed in its test stand" loading="lazy" />
+								</div>
+							</article>
+<section class="rocketry-details project-gallery-section" aria-labelledby="sphinx-gallery-title">
+<h4 id="sphinx-gallery-title">Building and integrating Mojave Sphinx</h4>
+<div class="onboarding-carousel project-photo-carousel" role="region" aria-roledescription="carousel" aria-label="Mojave Sphinx build and integration photos" data-launch-carousel>
+<div class="onboarding-carousel__track" id="sphinx-photo-track" tabindex="0" aria-label="Photos. Use left and right arrow keys to browse.">
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 6"><a href="images/rocketry/sphinx-combustion-chamber.jpg" aria-label="View full photo: Assembled combustion chamber"><img src="images/rocketry/sphinx-combustion-chamber.jpg" alt="Assembled combustion chamber for the Mojave Sphinx program" width="621" height="832" loading="lazy" decoding="async" /></a><figcaption>Assembled combustion chamber</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 6"><a href="images/rocketry/sphinx-interface-rings.jpg" aria-label="View full photo: Machined interface rings"><img src="images/rocketry/sphinx-interface-rings.jpg" alt="Machined interface rings for the Mojave Sphinx program" width="646" height="369" loading="lazy" decoding="async" /></a><figcaption>Machined interface rings</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 6"><a href="images/rocketry/sphinx-stand-brackets.jpg" aria-label="View full photo: Test-stand bracket fabrication"><img src="images/rocketry/sphinx-stand-brackets.jpg" alt="Test-stand bracket fabrication for the Mojave Sphinx program" width="436" height="172" loading="lazy" decoding="async" /></a><figcaption>Test-stand bracket fabrication</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 6"><a href="images/rocketry/sphinx-stand-installation.jpg" aria-label="View full photo: Installing the test-stand foundation"><img src="images/rocketry/sphinx-stand-installation.jpg" alt="Installing the test-stand foundation for the Mojave Sphinx program" width="479" height="416" loading="lazy" decoding="async" /></a><figcaption>Installing the test-stand foundation</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 6"><a href="images/rocketry/sphinx-team-integration.jpg" aria-label="View full photo: Team integration work"><img src="images/rocketry/sphinx-team-integration.jpg" alt="Team integration work for the Mojave Sphinx program" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>Team integration work</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 6"><a href="images/rocketry/sphinx-installed-stand.jpg" aria-label="View full photo: Installed static-fire restraint structure"><img src="images/rocketry/sphinx-installed-stand.jpg" alt="Installed static-fire restraint structure for the Mojave Sphinx program" width="1200" height="1600" loading="lazy" decoding="async" /></a><figcaption>Installed static-fire restraint structure</figcaption></figure>
+</div>
+<div class="onboarding-carousel__controls" hidden>
+<button type="button" data-carousel-prev aria-controls="sphinx-photo-track" aria-label="Previous Mojave Sphinx photo">&#8592;</button>
+<span data-carousel-count aria-live="polite" aria-atomic="true">1 / 6</span>
+<button type="button" data-carousel-next aria-controls="sphinx-photo-track" aria-label="Next Mojave Sphinx photo">&#8594;</button>
+</div>
+</div>
+</section>
+
+
+							<article class="rocketry-project rocketry-project--onboarding" id="low-power">
+<div class="rocketry-project__copy">
+<p class="rocketry-project__eyebrow">Onboarding · Design, build, fly</p>
+<h3>Onboarding &amp; Low Power Rocketry</h3>
+<p>New members learn the rocket flight cycle through a hands-on model-rocket project. Students explore OpenRocket to design their vehicle, compare stability and predicted altitude, and see how fins, nose cones, mass, and motor selection affect flight.</p>
+<p>The onboarding design uses a C6-5 motor and a 12-inch nylon parachute, with cardboard body and motor tubes, balsa fins and centering rings, and a plastic nose cone. The project introduces component design, assembly, launch preparation, and recovery before members take on larger vehicles.</p>
+</div>
+<div class="onboarding-carousel" role="region" aria-roledescription="carousel" aria-label="Onboarding photos and launch videos" data-launch-carousel>
+<div class="onboarding-carousel__track" id="onboarding-photo-track" tabindex="0" aria-label="Photos and launch videos. Use left and right arrow keys to browse.">
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="1 of 14"><a href="images/rocketry/onboarding-launch-01.jpg" aria-label="View full photo: Together on launch day"><img src="images/rocketry/onboarding-launch-01.jpg" alt="Together on launch day" loading="lazy" decoding="async" /></a><figcaption>Together on launch day</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 14"><a href="images/rocketry/onboarding-launch-02.jpg" aria-label="View full photo: Onboarding rockets ready after assembly"><img src="images/rocketry/onboarding-launch-02.jpg" alt="Onboarding rockets ready after assembly" loading="lazy" decoding="async" /></a><figcaption>Onboarding rockets ready after assembly</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 14"><a href="images/rocketry/onboarding-build-01.jpg" aria-label="View full photo: Building rockets together at an onboarding workshop"><img src="images/rocketry/onboarding-build-01.jpg" alt="Building rockets together at an onboarding workshop" loading="lazy" decoding="async" /></a><figcaption>Building rockets together at an onboarding workshop</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 14"><a href="images/rocketry/onboarding-build-02.jpg" aria-label="View full photo: Assembling a model rocket by hand"><img src="images/rocketry/onboarding-build-02.jpg" alt="Assembling a model rocket by hand" loading="lazy" decoding="async" /></a><figcaption>Assembling a model rocket by hand</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 14"><a href="images/rocketry/onboarding-build-03.jpg" aria-label="View full photo: Exploring a rocket design in OpenRocket"><img src="images/rocketry/onboarding-build-03.jpg" alt="Exploring a rocket design in OpenRocket" loading="lazy" decoding="async" /></a><figcaption>Exploring a rocket design in OpenRocket</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="6 of 14"><a href="images/rocketry/onboarding-build-04.jpg" aria-label="View full photo: Working on model-rocket components"><img src="images/rocketry/onboarding-build-04.jpg" alt="Working on model-rocket components" loading="lazy" decoding="async" /></a><figcaption>Working on model-rocket components</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="7 of 14"><video controls playsinline preload="none" poster="images/rocketry/onboarding-flight-01-poster.jpg" aria-label="Onboarding rocket launch 1"><source src="images/rocketry/onboarding-flight-01.mp4" type="video/mp4" /><a href="images/rocketry/onboarding-flight-01.mp4">Watch launch 1</a></video><figcaption>Launch 1 · Press play to watch</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="8 of 14"><a href="images/rocketry/onboarding-launch-03.jpg" aria-label="View full photo: A student-built rocket at the launch field"><img src="images/rocketry/onboarding-launch-03.jpg" alt="A student-built rocket at the launch field" loading="lazy" decoding="async" /></a><figcaption>A student-built rocket at the launch field</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="9 of 14"><a href="images/rocketry/onboarding-launch-04.jpg" aria-label="View full photo: Sharing a model rocket on launch day"><img src="images/rocketry/onboarding-launch-04.jpg" alt="Sharing a model rocket on launch day" loading="lazy" decoding="async" /></a><figcaption>Sharing a model rocket on launch day</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="10 of 14"><video controls playsinline preload="none" poster="images/rocketry/onboarding-flight-02-poster.jpg" aria-label="Onboarding rocket launch 2"><source src="images/rocketry/onboarding-flight-02.mp4" type="video/mp4" /><a href="images/rocketry/onboarding-flight-02.mp4">Watch launch 2</a></video><figcaption>Launch 2 · Press play to watch</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="11 of 14"><a href="images/rocketry/onboarding-launch-05.jpg" aria-label="View full photo: At the launch field with a completed rocket"><img src="images/rocketry/onboarding-launch-05.jpg" alt="At the launch field with a completed rocket" loading="lazy" decoding="async" /></a><figcaption>At the launch field with a completed rocket</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="12 of 14"><a href="images/rocketry/onboarding-launch-06.jpg" aria-label="View full photo: Team members and their rockets"><img src="images/rocketry/onboarding-launch-06.jpg" alt="Team members and their rockets" loading="lazy" decoding="async" /></a><figcaption>Team members and their rockets</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="13 of 14"><video controls playsinline preload="none" poster="images/rocketry/onboarding-flight-03-poster.jpg" aria-label="Onboarding rocket launch 3"><source src="images/rocketry/onboarding-flight-03.mp4" type="video/mp4" /><a href="images/rocketry/onboarding-flight-03.mp4">Watch launch 3</a></video><figcaption>Launch 3 · Press play to watch</figcaption></figure>
+<figure class="onboarding-carousel__slide" role="group" aria-roledescription="slide" aria-label="14 of 14"><a href="images/rocketry/onboarding-launch-09.jpg" aria-label="View full photo: Celebrating a day at the launch field"><img src="images/rocketry/onboarding-launch-09.jpg" alt="Celebrating a day at the launch field" loading="lazy" decoding="async" /></a><figcaption>Celebrating a day at the launch field</figcaption></figure>
+</div>
+<div class="onboarding-carousel__controls" hidden>
+<button type="button" data-carousel-prev aria-controls="onboarding-photo-track" aria-label="Previous photo or video">&#8592;</button>
+<span data-carousel-count aria-live="polite" aria-atomic="true">1 / 14</span>
+<button type="button" data-carousel-next aria-controls="onboarding-photo-track" aria-label="Next photo or video">&#8594;</button>
+</div>
+</div>
+</article>
+
+							<article class="rocketry-project" id="certifications">
+								<div class="rocketry-project__copy">
+									<p class="rocketry-project__eyebrow">Member development</p>
+									<h3>High Power Rocketry Certifications</h3>
+									<p>Members progress through National Association of Rocketry (NAR) high-power certification levels 1 through 3.</p>
+									<p>Certification flights provide a structured path to building and flying increasingly capable rockets while developing safe launch and recovery practices.</p>
+								</div>
+								<div class="rocketry-project__media">
+									<img src="images/rocketry/high-power-certification-team.webp" alt="Rocketry team members with their high-power certification rockets" loading="lazy" />
+								</div>
+							</article>
+						</section>
+
+						<section class="rocketry-team">
 							<h3>Rocketry Team Members Spring 2026</h3>
-							<span class="image fit" style="width: 80%; margin: 0 auto; display: block;"><img src="images/RocketryTeam.webp" alt="Rocketry Team Spring 2026" /></span>
+							<span class="image fit"><img src="images/optimized/RocketryTeam.webp" alt="Rocketry Team Spring 2026" /></span>
 						</section>
-
 					</div>
-				</div>
+				</main>
 
 			<!-- Footer -->
 				<footer id="footer">
@@ -98,6 +326,7 @@ Mojave Sphinx: Half-Cat Rocketry’s Mojave Sphinx is an open-source liquid bi-p
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/launch-carousel.js?v=2"></script>
 
 	</body>
 </html>

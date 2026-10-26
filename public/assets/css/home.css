@@ -1,0 +1,53 @@
+.home-feature {
+	background: #1c1d26;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.home-feature .home-feature__eyebrow {
+	color: #e44c65;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	margin: 0 0 0.75rem;
+	text-transform: uppercase;
+}
+
+.home-feature header.major > p:last-child {
+	max-width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.home-feature__figure {
+	margin: 0 0 2rem;
+}
+
+.home-feature__figure a {
+	border: 0;
+	border-radius: 4px;
+	display: block;
+	overflow: hidden;
+}
+
+.home-feature__figure img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+.home-feature__figure figcaption {
+	color: rgba(255, 255, 255, 0.65);
+	font-size: 0.85rem;
+	margin-top: 0.75rem;
+	text-align: center;
+}
+
+.home-feature .actions {
+	margin-bottom: 0;
+}
+
+.home-feature--uav .home-feature__figure img {
+	max-height: 32rem;
+	object-fit: contain;
+	background: #272833;
+}

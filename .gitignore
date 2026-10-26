@@ -1,4 +1,10 @@
 # Logs
+# Local source media and reference documents; website assets live in public/.
+/images/
+/documents/
+/public/documents/
+/tmp/
+
 logs
 *.log
 npm-debug.log*

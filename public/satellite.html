@@ -1,57 +1,66 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
 		<title>HUAC Satellite Team</title>
 		<link rel="icon" type="image/png" href="images/HuacIcon.png">
 		<meta charset="utf-8" />
-		<script src="assets/js/drive-slideshow.js"></script>
+		<meta name="description" content="Meet HUAC's Satellite Team and explore HUCSat's mission, spacecraft development, testing, launch trip, and live orbit tracker." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
 		<link rel="stylesheet" href="assets/css/hucsat-tracker.css" />
+		<link rel="stylesheet" href="assets/css/satellite.css?v=3" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Mozilla+Text:wght@200..700&family=Zen+Dots&display=swap" rel="stylesheet">
 	</head>
-	<body class="is-preload">
+	<body class="is-preload satellite-page">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header">
 					<h1 id="logo"><a href="index.html">Harvard Undergraduate Aerospace Collective
 					</a></h1>
-					<nav id="nav">
+					<nav id="nav" aria-label="Main navigation">
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li>
-								<li>
-									<a href="#">Teams</a>
-									<ul>
-										<li><a href="satellite.html">Satellite</a></li>
-										<li><a href="rocketry.html">Rocketry</a></li>
-										<li><a href="uav.html">UAV</a></li>
-									</ul>
-								</li>
-								<li><a href="leadership.html">Leadership</a></li>
-								<li><a href="sponsors.html">Sponsors</a></li>
+								<a href="#">Teams</a>
+								<ul>
+									<li><a href="satellite.html" aria-current="page">Satellite</a></li>
+									<li><a href="rocketry.html">Rocketry</a></li>
+									<li><a href="uav.html">UAV</a></li>
+								</ul>
 							</li>
+							<li><a href="leadership.html">Leadership</a></li>
+							<li><a href="sponsors.html">Sponsors</a></li>
 						</ul>
 					</nav>
 				</header>
 			<!-- Main -->
-				<div id="main" class="wrapper style1">
+				<main id="main" class="wrapper style1">
 					<div class="container">
 
 						<!-- Team Intro -->
 						<header class="major">
 							<h2>Satellite Team</h2>
-							<p>The Satellite Team has been active since 2016 and specializes in developing CubeSats—from concept and design through integration, testing, and on-orbit operations. Team members gain hands-on experience in subsystem engineering, including payload definition and instrument integration, as well as bus design, power distribution, and on-orbit communications.</p>
+							<p>HUAC’s Satellite Team designs, builds, tests, and operates CubeSats. Its first spacecraft, HUCSat, is a 2U research satellite testing a shape-memory-alloy mechanism for reorienting a deployable solar-panel platform.</p>
 						</header>
 
+						<nav class="satellite-nav" aria-label="Satellite page sections">
+							<a href="#tracker-title">Live tracker</a>
+							<a href="#mission-title">Mission</a>
+							<a href="#payload-title">Payload</a>
+							<a href="#development-title">Development</a>
+							<a href="#launch-trip-title">Launch trip</a>
+							<a href="#launch-video-title">Launch video</a>
+							<a href="#deployment-video-title">Deployment video</a>
+						</nav>
+
 						<!-- HUCSat Tracker -->
-						<section>
-							<h3>HUCSat Tracker</h3>
+						<section aria-labelledby="tracker-title">
+							<h3 id="tracker-title">HUCSat Tracker</h3>
 							<p>Follow the real-time position of HUCSat using the satellite tracker developed by the team.</p>
 							<!-- Ported from CubeSATI_MissionStation; see assets/js/hucsat-tracker.js -->
 							<div id="hucsat-tracker">
@@ -90,75 +99,130 @@
 								</div>
 								<p class="ht-note">Positions are computed live in your browser from HUCSat's latest orbital elements (NORAD 69794, via <a href="https://celestrak.org">CelesTrak</a>). Passes count once HUCSat climbs above 30° elevation at our ground station on the SEC roof; the red ring on the map shows that coverage area.</p>
 							</div>
+							<p><a href="https://app.tinygs.com/satellite/HUCSat" target="_blank" rel="noopener noreferrer">View HUCSat on TinyGS</a></p>
 						</section>
 						<hr />
 
-						<!-- HUCSat Mission -->
-						<section>
-							<div class="row gtr-150">
-								<div class="col-8 col-12-medium">
-									<h3>HUCSat Mission</h3>
-									<p>HUCSat is Harvard College’s inaugural CubeSat, launched in April 2026 and deployed from the International Space Station in July 2026 through NASA’s CubeSat Launch Initiative (CSLI). The mission’s primary objective is to demonstrate a novel shape-memory-alloy (SMA) solar array deployment mechanism, a technology that could enable more compact, cheaper, and reliable satellite designs in the future.
+						<section class="satellite-section" aria-labelledby="mission-title">
+							<p class="satellite-eyebrow">Mission overview</p>
+							<h3 id="mission-title">A small satellite testing a new way to move in space</h3>
+							<p>HUCSat is Harvard College’s first student-built CubeSat. Its payload tests whether shape-memory-alloy (SMA) actuators can reorient a solar-panel platform with less mass, power, and mechanical complexity than motors and geartrains.</p>
+							<p>The spacecraft was handed off for launch integration in January 2026, launched to the International Space Station aboard Northrop Grumman’s NG-24 mission on April 11, and deployed into low Earth orbit on July 2, 2026. The team is now receiving telemetry and mission data through its on-campus ground station and the amateur-satellite community.</p>
+							<dl class="satellite-specs">
+								<div><dt>Form factor</dt><dd>2U · 10 × 10 × 20 cm</dd></div>
+								<div><dt>Mass</dt><dd>About 2.6 kg</dd></div>
+								<div><dt>Orbit</dt><dd>About 410 km · 51.6° inclination</dd></div>
+								<div><dt>Launch</dt><dd>NG-24 to the ISS · Apr 11, 2026</dd></div>
+								<div><dt>Deployment</dt><dd>From the ISS · Jul 2, 2026</dd></div>
+								<div><dt>Communications</dt><dd>UHF command/telemetry · S-band payload data</dd></div>
+							</dl>
+							<p class="satellite-source">Explore the <a href="https://christopherprainito.com/projects/hucsat/">HUCSat engineering overview by chief engineer Christopher Prainito</a> for more mission details.</p>
+						</section>
 
-The satellite is expected to remain operational through the end of 2027, during which time the team is actively downlinking telemetry and science data using its on-campus ground station atop the roof of Harvard’s Science and Engineering Complex (SEC). This mission builds on years of student-led development at Harvard and helped set up the foundation for the team’s future CubeSat missions. 
-									</p>
-								</div>
-								<div class="col-4 col-12-medium">
-									<div id="satellite-progress-slideshow"></div>
-								</div>
+						<section class="satellite-section" aria-labelledby="payload-title">
+							<p class="satellite-eyebrow">The payload</p>
+							<h3 id="payload-title">Shape-memory alloy solar-panel orientation</h3>
+							<div class="satellite-payload-copy">
+								<p>After deployment, a torsion-spring linkage lifts the panel platform away from the satellite body. Four nickel-titanium (Nitinol) coils can be heated individually; their contraction turns the platform toward the Sun without a motor or gearbox.</p>
+								<p>Onboard light sensors verify the panel’s response. The mission tests whether this low-part-count, low-power approach can produce useful, repeatable motion in orbit.</p>
 							</div>
 						</section>
-						<script>
-							initDriveSlideshow('satellite-progress-slideshow', '1Ug5yfTiUDfC6O3TTK2YecKvYjW2RedHI', 'AIzaSyANcILY099U0b9G2Y1e4fn40oAdYxNlfqE', {
-								maxWidth: '100%',
-								height: '300px',
-								intervalMs: 4000
-							});
-						</script>
 
-						<hr />
-						<!-- Launch Trip -->
-						<section>
-							<h3>Launch Trip!</h3>
-							<p>We sent a group of alumni and students to Kennedy Space Center where they got to see the launch of the NG-24 Cargo Supply mission aboard the Falcon-9, meet with other cubesat teams, and visit the VAB.</p>
-							<div id="satellite-launch-slideshow"></div>
+						<section class="satellite-section" aria-labelledby="development-title">
+							<p class="satellite-eyebrow">HUCSat progress</p>
+							<h3 id="development-title">From the workbench to launch integration</h3>
+							<p>A look inside the hardware preparation and testing that brought the student-built spacecraft to flight.</p>
+							<div class="satellite-gallery satellite-gallery--development">
+								<figure>
+									<a href="images/hucsat/development-integration.webp" aria-label="View full photo: development integration"><img src="images/hucsat/development-integration.webp" alt="HUCSat spacecraft hardware during development and integration" loading="lazy" width="904" height="1200" decoding="async" /></a>
+									<figcaption>Spacecraft and deployer integration</figcaption>
+								</figure>
+								<figure>
+									<a href="images/hucsat/development-thermal-vacuum.webp" aria-label="View full photo: development thermal vacuum"><img src="images/hucsat/development-thermal-vacuum.webp" alt="HUCSat circuit boards arranged for environmental testing" loading="lazy" width="904" height="1200" decoding="async" /></a>
+									<figcaption>Electronics prepared for environmental testing</figcaption>
+								</figure>
+								<figure>
+									<a href="images/hucsat/development-fit-check.webp" aria-label="View full photo: development fit check"><img src="images/hucsat/development-fit-check.webp" alt="Team member beside an open Voyager vacuum chamber" loading="lazy" width="904" height="1200" decoding="async" /></a>
+									<figcaption>At the vacuum testing facility</figcaption>
+								</figure>
+							</div>
 						</section>
 
-						<script>
-							initDriveSlideshow('satellite-launch-slideshow', '13an15_6k10ONMA7Ut4nHHyP5_cfBqk85', 'AIzaSyANcILY099U0b9G2Y1e4fn40oAdYxNlfqE', {
-								maxWidth: '100%',
-								height: '500px',
-								intervalMs: 4000
-							});
-						</script>
+						<section class="satellite-section" aria-labelledby="mission-goals-title">
+							<p class="satellite-eyebrow">Mission goals</p>
+							<h3 id="mission-goals-title">What HUCSat is demonstrating</h3>
+							<ol class="satellite-goals">
+								<li>Initialize safely after deployment, establish communications, and detumble.</li>
+								<li>Release the payload platform from its stowed configuration.</li>
+								<li>Demonstrate controlled SMA-driven platform reorientation for at least one orbit.</li>
+								<li>Downlink telemetry and payload data to verify actuation with onboard sensors.</li>
+							</ol>
+						</section>
 
-						<hr />
-						<!-- Videos: SEAS Video + ISS Deployment -->
-						<section>
-							<div class="row gtr-150">
-								<div class="col-6 col-12-medium">
-									<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-										<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/QFT4uhm8i50" title="Harvard SEAS Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-									</div>
-									<p style="text-align:center; margin-top: 0.5em;">Harvard John. A. Paulson School of Engineering and Applied Sciences video of our HUCSat Launch</p>
-								</div>
-								<div class="col-6 col-12-medium">
-									<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-										<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="HUCSat ISS Deployment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-									</div>
-									<p style="text-align:center; margin-top: 0.5em;">HUCSat Deployment off of the International Space Station</p>
-								</div>
+						<section class="satellite-section" aria-labelledby="subsystems-title">
+							<p class="satellite-eyebrow">Spacecraft systems</p>
+							<h3 id="subsystems-title">Built as an integrated stack</h3>
+							<div class="satellite-subsystems">
+								<article><h4>Structure &amp; power</h4><p>A custom aluminum 2U frame houses the subsystem stack. Body-mounted solar panels and protected lithium-ion batteries support the ISS-deployment mission profile.</p></article>
+								<article><h4>Avionics &amp; attitude</h4><p>A custom flight controller handles boot sequencing, payload scheduling, data logging, and fault response. An IMU, light sensors, and magnetorquers support detumbling and coarse attitude control.</p></article>
+								<article><h4>Communications</h4><p>UHF supports command and telemetry; S-band provides a higher-throughput payload-data link. The ground segment connects the student team with a wider amateur-satellite receiving network.</p></article>
 							</div>
+						</section>
+
+						<section class="satellite-section" aria-labelledby="verification-title">
+							<p class="satellite-eyebrow">Verification</p>
+							<h3 id="verification-title">Tested before flight, monitored on orbit</h3>
+							<p>Verification included battery protection and environmental checks, repeated payload deployment cycles under thermal-vacuum conditions, vibration testing, and end-to-end radio link checks with ground-station equipment. The team continues monitoring spacecraft telemetry and payload data after deployment.</p>
+						</section>
+
+						<section class="satellite-section" aria-labelledby="launch-trip-title">
+							<p class="satellite-eyebrow">April 2026 · Kennedy Space Center</p>
+							<h3 id="launch-trip-title">The HUAC team at launch</h3>
+							<p>The launch trip brought the team to Florida to celebrate HUCSat's journey to space and explore Kennedy Space Center together.</p>
+							<div class="satellite-gallery satellite-gallery--launch">
+								<figure>
+									<a href="images/hucsat/launch-trip-kennedy.webp" aria-label="View full photo: launch trip kennedy"><img src="images/hucsat/launch-trip-kennedy.webp" alt="HUAC students and alumni at Kennedy Space Center" loading="lazy" width="1600" height="1166" decoding="async" /></a>
+									<figcaption>HUAC at Kennedy Space Center</figcaption>
+								</figure>
+								<figure>
+									<a href="images/hucsat/launch-trip-shuttle-exhibit.webp" aria-label="View full photo: launch trip shuttle exhibit"><img src="images/hucsat/launch-trip-shuttle-exhibit.webp" alt="HUAC team members at a spaceflight exhibit" loading="lazy" width="1600" height="1200" decoding="async" /></a>
+									<figcaption>Visiting the Apollo lunar module exhibit</figcaption>
+								</figure>
+								<figure>
+									<a href="images/hucsat/launch-trip-rocket-garden.webp" aria-label="View full photo: launch trip rocket garden"><img src="images/hucsat/launch-trip-rocket-garden.webp" alt="Historic launch vehicles in the Kennedy Space Center Rocket Garden" loading="lazy" width="900" height="1200" decoding="async" /></a>
+									<figcaption>Exploring the Rocket Garden</figcaption>
+								</figure>
+							</div>
+						</section>
+
+						<section class="satellite-section satellite-video" aria-labelledby="launch-video-title">
+							<h3 id="launch-video-title">Watch the HUCSat launch</h3>
+							<div class="satellite-video__frame">
+								<iframe src="https://www.youtube.com/embed/QFT4uhm8i50" title="Harvard SEAS video of the HUCSat launch" width="960" height="540" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							</div>
+							<p>Harvard John A. Paulson School of Engineering and Applied Sciences video of the HUCSat launch.</p>
+							<p><a class="button" href="https://www.youtube.com/watch?v=QFT4uhm8i50" target="_blank" rel="noopener">Watch on YouTube</a></p>
+						</section>
+
+						<section class="satellite-section satellite-video" aria-labelledby="deployment-video-title">
+							<p class="satellite-eyebrow">From the ISS to orbit</p>
+							<h3 id="deployment-video-title">Watch HUCSat deploy</h3>
+							<video class="satellite-deployment-video" controls playsinline preload="metadata" poster="images/hucsat/hucsat-iss-deployment-poster.jpg" width="960" height="726" aria-label="HUCSat deployment from the International Space Station">
+								<source src="images/hucsat/hucsat-iss-deployment.mp4" type="video/mp4" />
+								<a href="images/hucsat/hucsat-iss-deployment.mp4">Watch the HUCSat deployment video</a>.
+							</video>
+							<p>HUCSat's deployment from the International Space Station on July 2, 2026.</p>
+							<p><a href="images/hucsat/hucsat-iss-deployment.mp4">Open the deployment video</a></p>
 						</section>
 
 						<!-- Members -->
 						<section>
 							<h3>Satellite Team Members Spring 2026</h3>
-							<span class="image fit" style="width: 100%; margin: 0 auto; display: block;"><img src="images/SatelliteTeam.webp" alt="Satellite Team 2026" /></span>
+							<span class="image fit" style="width: 100%; margin: 0 auto; display: block;"><img src="images/optimized/SatelliteTeam.webp" alt="Satellite Team 2026" /></span>
 						</section>
 
 					</div>
-				</div>
+				</main>
 
 			<!-- Footer -->
 				<footer id="footer">

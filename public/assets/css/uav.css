@@ -1,0 +1,179 @@
+.uav-page #main.wrapper {
+	background: #1c1d26;
+}
+
+.uav-page #main > .container {
+	padding-top: 5rem;
+}
+
+.uav-page .uav-nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.6rem 1.5rem;
+	margin-bottom: 3rem;
+}
+
+.uav-page .uav-section {
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	margin-top: 3rem;
+	padding-top: 3rem;
+	scroll-margin-top: 6rem;
+}
+
+.uav-page .uav-eyebrow {
+	color: #e44c65;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	margin-bottom: 0.6rem;
+	text-transform: uppercase;
+}
+
+.uav-page .uav-section h3 {
+	font-size: 1.7rem;
+	line-height: 1.4;
+}
+
+.uav-page .uav-cards,
+.uav-page .uav-specs {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+
+.uav-page .uav-cards--two {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.uav-page .uav-cards article,
+.uav-page .uav-specs > div {
+	border-left: 3px solid #e44c65;
+	background: rgba(255, 255, 255, 0.035);
+	padding: 1.25rem;
+}
+
+.uav-page .uav-cards h4 {
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+
+.uav-page .uav-cards article p:last-child {
+	margin-bottom: 0;
+}
+
+.uav-page .uav-specs dt {
+	color: #e44c65;
+	font-size: 0.8rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.uav-page .uav-specs dd {
+	color: #fff;
+	margin: 0.4rem 0 0;
+}
+
+.uav-page .uav-source {
+	font-size: 0.9rem;
+}
+
+@media screen and (max-width: 980px) {
+	.uav-page .uav-cards {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.uav-page #main > .container {
+		padding-top: 2rem;
+	}
+
+	.uav-page .uav-section {
+		margin-top: 2rem;
+		padding-top: 2rem;
+	}
+
+	.uav-page .uav-section h3 {
+		font-size: 1.4rem;
+	}
+
+	.uav-page .uav-specs {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.uav-page .onboarding-carousel {
+	min-width: 0;
+}
+
+.uav-page .project-photo-carousel {
+	max-width: 800px;
+	margin: 1.5rem auto 0;
+}
+
+.uav-page .project-photo-carousel--cad .onboarding-carousel__slide img {
+	background: #fff;
+}
+
+.uav-page .onboarding-carousel__track {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: thin;
+	overscroll-behavior-x: contain;
+}
+
+.uav-page .onboarding-carousel__slide {
+	flex: 0 0 100%;
+	margin: 0;
+	min-width: 0;
+	scroll-snap-align: start;
+}
+
+.uav-page .onboarding-carousel__slide a {
+	display: block;
+	border: 0;
+}
+
+.uav-page .onboarding-carousel__slide img,
+.uav-page .onboarding-carousel__slide video {
+	aspect-ratio: 4 / 3;
+	background: #272833;
+	border-radius: 4px;
+	display: block;
+	height: auto;
+	object-fit: contain;
+	width: 100%;
+}
+
+.uav-page .onboarding-carousel__slide figcaption {
+	font-size: 0.85rem;
+	line-height: 1.5;
+	padding: 0.75rem 0.25rem;
+}
+
+.uav-page .onboarding-carousel__controls {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 0.75rem;
+}
+
+.uav-page .onboarding-carousel__controls[hidden] {
+	display: none;
+}
+
+.uav-page .onboarding-carousel__controls button {
+	font-size: 1.2rem;
+	min-width: 3rem;
+	padding: 0 1rem;
+}
+
+.uav-page .onboarding-carousel__track:focus-visible,
+.uav-page .onboarding-carousel__controls button:focus-visible {
+	outline: 2px solid #e44c65;
+	outline-offset: 4px;
+}
